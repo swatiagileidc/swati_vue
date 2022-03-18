@@ -142,8 +142,6 @@ export default {
   },
   methods: {
     addfilename(filename) {
-      alert("test");
-      alert(filename);
       this.testcases.filename = filename;
     },
     validate() {

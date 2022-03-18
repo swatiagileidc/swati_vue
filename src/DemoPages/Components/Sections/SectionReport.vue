@@ -42,7 +42,7 @@
         <v-dialog v-model="dialog" max-width="1000px">
         <v-card>
           <v-card-title>
-            <!-- <span class="headline">{{ $t("leads") }}</span> -->
+            <span class="headline">Add Section</span>
           <page-title heading="Sections" :icon="icon"></page-title>
           </v-card-title>
 
@@ -53,7 +53,7 @@
                           <v-flex xs12 md12>
                              <v-select
                                 v-model="fieldItem.parent_id"
-                                :items="sections.filter((item)=>item.id !== fieldItem.id && item.parent_id !== fieldItem.id) "
+                                :items="sections.filter((item)=>item.id !== fieldItem.id ) "
                                 item-text="section_name"
                                 item-value="id"
                                 label="Item"
@@ -141,6 +141,7 @@ export default {
       this.fieldItem.section_name = "";
       this.fieldItem.parent_id = 0;
       this.dialog = true;
+      this.fetchSections();
     },
 
     editSection($id){
